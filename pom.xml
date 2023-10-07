@@ -25,7 +25,7 @@
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>Kotlin KSP compiler plugin used during compiling to generate extensions that are used by PF4J framework</description>
+    <description>Extension for the kotlin-maven-plugin to support Kotlin Symbol Processing (KSP) that process Extension annotation used by PF4J framework</description>
     <url>https://github.com/better-care/pf4j-kotlin-symbol-processing</url>
 
     <properties>
