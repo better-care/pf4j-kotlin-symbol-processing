@@ -62,7 +62,7 @@ Define the kotlin-maven-plugin in your pom.xml:
         <dependency>
             <artifactId>pf4j-kotlin-symbol-processing</artifactId>
             <groupId>care.better.pf4j</groupId>
-            <version>1.0.0</version>
+            <version>1.0.0-RC1</version>
         </dependency>
     </dependencies>
 </plugin>

@@ -21,10 +21,12 @@
 
     <artifactId>pf4j-kotlin-symbol-processing</artifactId>
     <groupId>care.better.pf4j</groupId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0-RC1</version>
     <packaging>jar</packaging>
 
-    <name>PF4J Kotlin Symbol processing</name>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Kotlin KSP compiler plugin used during compiling to generate extensions that are used by PF4J framework</description>
+    <url>https://github.com/better-care/pf4j-kotlin-symbol-processing</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
