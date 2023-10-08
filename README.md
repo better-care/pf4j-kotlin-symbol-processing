@@ -1,6 +1,6 @@
 # pf4j-kotlin-symbol-processing
 
-Extension for the kotlin-maven-plugin to support Kotlin Symbol Processing (KSP) that processes Extension annotation used by PF4J framework.
+Extension for the `kotlin-maven-plugin` to support Kotlin Symbol Processing (KSP) that processes Extension annotation used by PF4J framework.
 
 ## Licence
 [![License](https://img.shields.io/badge/license-apache%202.0-60C060.svg)](https://choosealicense.com/licenses/apache-2.0/)
@@ -67,3 +67,19 @@ Define the kotlin-maven-plugin in your pom.xml:
     </dependencies>
 </plugin>
 ```
+
+---
+
+**NOTE**
+
+Currently, you need to compile the project where `pf4j-kotlin-symbol-processing` is used in a single thread (do not use `-T` option).
+
+For example, to compile the project, the following command could be used:
+
+```shell 
+mvn clean install
+```
+
+There is already an open issue [1385](https://github.com/google/ksp/issues/1385) in the [ksp](https://github.com/google/ksp) repository.
+
+---
