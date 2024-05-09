@@ -30,7 +30,7 @@ Define the kotlin-maven-plugin in your pom.xml:
 <plugin>
     <groupId>org.jetbrains.kotlin</groupId>
     <artifactId>kotlin-maven-plugin</artifactId>
-    <version>1.9.10</version>
+    <version>1.9.24</version>
     <executions>
         <execution>
             <id>compile</id>
@@ -62,27 +62,11 @@ Define the kotlin-maven-plugin in your pom.xml:
         <dependency>
             <artifactId>pf4j-kotlin-symbol-processing</artifactId>
             <groupId>care.better.pf4j</groupId>
-            <version>1.0.0-RC1</version>
+            <version>1.9.24-1.0.0</version>
         </dependency>
     </dependencies>
 </plugin>
 ```
-
----
-
-**NOTE**
-
-Currently, you need to compile the project where `pf4j-kotlin-symbol-processing` is used in a single thread (do not use `-T` option).
-
-For example, to compile the project, the following command could be used:
-
-```shell 
-mvn clean install
-```
-
-There is already an open issue [1385](https://github.com/google/ksp/issues/1385) in the [ksp](https://github.com/google/ksp) repository.
-
----
 
 ### Usage with Gradle
 
@@ -100,11 +84,11 @@ Apply the com.google.devtools.ksp plugin with the specified version and pf4j-kot
 
 ```kotlin
 plugins {
-    id("com.google.devtools.ksp") version "1.9.10-1.0.13"
+    id("com.google.devtools.ksp") version "1.9.24-1.0.20"
 }
 
 dependencies {
     implementation("org.pf4j:pf4j:3.3.1")
-    ksp("care.better.pf4j:pf4j-kotlin-symbol-processing:1.0.0-RC1")
+    ksp("care.better.pf4j:pf4j-kotlin-symbol-processing:1.9.24-1.0.0")
 }
 ```

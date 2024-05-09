@@ -21,7 +21,7 @@
 
     <artifactId>pf4j-kotlin-symbol-processing</artifactId>
     <groupId>care.better.pf4j</groupId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.9.24-1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
@@ -35,16 +35,26 @@
         <maven.compiler.target>17</maven.compiler.target>
 
         <pf4j.version>3.3.1</pf4j.version>
-        <kotlin.version>1.9.10</kotlin.version>
-        <symbol-processing-api.version>1.9.10-1.0.13</symbol-processing-api.version>
+        <kotlin.version>1.9.24</kotlin.version>
+        <symbol-processing-api.version>1.9.24-1.0.20</symbol-processing-api.version>
 
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <maven-nexus-staging-plugin.version>1.6.13</maven-nexus-staging-plugin.version>
-        <maven-dokka-plugin.version>1.9.0</maven-dokka-plugin.version>
+        <maven-dokka-plugin.version>1.9.20</maven-dokka-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-enforcer-plugin.version>3.0.0</maven-enforcer-plugin.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
