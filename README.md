@@ -1,6 +1,6 @@
 # pf4j-kotlin-symbol-processing
 
-Extension for the `kotlin-maven-plugin` to support Kotlin Symbol Processing (KSP) that processes Extension annotation used by PF4J framework.
+Library that is using Kotlin Symbol Processing (KSP) that processes Extension annotation used by PF4J framework.
 
 ## Licence
 [![License](https://img.shields.io/badge/license-apache%202.0-60C060.svg)](https://choosealicense.com/licenses/apache-2.0/)
