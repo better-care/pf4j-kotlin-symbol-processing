@@ -30,7 +30,7 @@ Define the kotlin-maven-plugin in your pom.xml:
 <plugin>
     <groupId>org.jetbrains.kotlin</groupId>
     <artifactId>kotlin-maven-plugin</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.21</version>
     <executions>
         <execution>
             <id>compile</id>
@@ -62,7 +62,7 @@ Define the kotlin-maven-plugin in your pom.xml:
         <dependency>
             <artifactId>pf4j-kotlin-symbol-processing</artifactId>
             <groupId>care.better.pf4j</groupId>
-            <version>2.0.20-1.0.1</version>
+            <version>2.0.21-1.0.1</version>
         </dependency>
     </dependencies>
 </plugin>
@@ -84,11 +84,11 @@ Apply the com.google.devtools.ksp plugin with the specified version and pf4j-kot
 
 ```kotlin
 plugins {
-    id("com.google.devtools.ksp") version "2.0.20-1.0.24"
+    id("com.google.devtools.ksp") version "2.0.21-1.0.25"
 }
 
 dependencies {
     implementation("org.pf4j:pf4j:3.3.1")
-    ksp("care.better.pf4j:pf4j-kotlin-symbol-processing:2.0.20-1.0.1")
+    ksp("care.better.pf4j:pf4j-kotlin-symbol-processing:2.0.21-1.0.1")
 }
 ```
