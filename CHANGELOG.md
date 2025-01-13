@@ -2,9 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
-## 2.1.0-1.0.1 - 2024-12-19
+## 2.1.0-1.0.2 - 2025-01-13
 
-- Upgrade Kotlin to 2.1.0
+- Upgrade Kotlin to 2.1.0 and PF4J to 3.13.0. Thanks to @grimsi for the contribution!
 
 ## 2.0.21-1.0.1 - 2024-10-11
 
