@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.1.20-1.0.2 - 2025-03-27
+
+- Upgrade Kotlin to 2.1.20
+
+## 2.1.0-1.0.2 - 2025-01-13
+
 ## 2.1.10-1.0.2 - 2025-01-29
 
 - Upgrade Kotlin to 2.1.10
