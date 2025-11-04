@@ -25,47 +25,110 @@ Define the PF4J dependency in your pom.xml:
 
 Define the kotlin-maven-plugin in your pom.xml:
 
-```xml
+```xml 
 
-<plugin>
-    <groupId>org.jetbrains.kotlin</groupId>
-    <artifactId>kotlin-maven-plugin</artifactId>
-    <version>2.2.20</version>
-    <executions>
-        <execution>
-            <id>compile</id>
-            <phase>compile</phase>
-            <goals>
-                <goal>compile</goal>
-            </goals>
-        </execution>
-        <execution>
-            <id>test-compile</id>
-            <phase>test-compile</phase>
-            <goals>
-                <goal>test-compile</goal>
-            </goals>
-        </execution>
-    </executions>
-    <configuration>
-        <jvmTarget>17</jvmTarget>
-        <compilerPlugins>
-            <compilerPlugin>ksp</compilerPlugin>
-        </compilerPlugins>
-    </configuration>
-    <dependencies>
-        <dependency>
-            <groupId>com.dyescape</groupId>
-            <artifactId>kotlin-maven-symbol-processing</artifactId>
-            <version>1.7</version>
-        </dependency>
-        <dependency>
-            <artifactId>pf4j-kotlin-symbol-processing</artifactId>
-            <groupId>care.better.pf4j</groupId>
-            <version>2.2.20-1.0.3</version>
-        </dependency>
-    </dependencies>
-</plugin>
+<build> <!-- For Kotlin 1.9 -->
+    <plugins>
+        <plugin> <!-- For Kotlin 1.9 -->
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-maven-plugin</artifactId>
+            <version>1.9.20</version>
+            <executions>
+                <execution>
+                    <id>compile</id>
+                    <phase>compile</phase>
+                    <goals>
+                        <goal>compile</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>test-compile</id>
+                    <phase>test-compile</phase>
+                    <goals>
+                        <goal>test-compile</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <jvmTarget>17</jvmTarget>
+                <compilerPlugins>
+                    <compilerPlugin>ksp</compilerPlugin>
+                </compilerPlugins>
+            </configuration>
+            <dependencies>
+                <dependency>
+                    <groupId>com.dyescape</groupId>
+                    <artifactId>kotlin-maven-symbol-processing</artifactId>
+                    <version>1.6</version>
+                </dependency>
+                <dependency>
+                    <artifactId>pf4j-kotlin-symbol-processing</artifactId>
+                    <groupId>care.better.pf4j</groupId>
+                    <version>1.9.25-1.0.0</version>
+                </dependency>
+            </dependencies>
+        </plugin>
+    </plugins>
+</build>
+```
+
+```xml
+<build> <!-- For Kotlin 2.0 or higher -->
+    <plugins>
+        <plugin>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-maven-plugin</artifactId>
+            <version>2.2.20</version>
+            <executions>
+                <execution>
+                    <id>compile</id>
+                    <phase>compile</phase>
+                    <goals>
+                        <goal>compile</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>test-compile</id>
+                    <phase>test-compile</phase>
+                    <goals>
+                        <goal>test-compile</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <jvmTarget>17</jvmTarget>
+                <compilerPlugins>
+                    <compilerPlugin>ksp</compilerPlugin>
+                </compilerPlugins>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>io.mcarle</groupId>
+            <artifactId>ksp-maven-plugin</artifactId>
+            <version>2.3.0-1</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>ksp</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <jvmTarget>17</jvmTarget>
+                <apiVersion>2.2.20</apiVersion>
+                <languageVersion>2.2.20</languageVersion>
+                <processorOptions></processorOptions>
+            </configuration>
+            <dependencies>
+                <dependency>
+                    <artifactId>pf4j-kotlin-symbol-processing</artifactId>
+                    <groupId>care.better.pf4j</groupId>
+                    <version>2.2.20-1.0.3</version>
+                </dependency>
+            </dependencies>
+        </plugin>
+    </plugins>
+</build>
 ```
 
 ### Usage with Gradle
