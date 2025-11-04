@@ -29,7 +29,7 @@ Define the kotlin-maven-plugin in your pom.xml:
 
 <build> <!-- For Kotlin 1.9 -->
     <plugins>
-        <plugin> <!-- For Kotlin 1.9 -->
+        <plugin>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-maven-plugin</artifactId>
             <version>1.9.20</version>
