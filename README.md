@@ -78,7 +78,7 @@ Define the kotlin-maven-plugin in your pom.xml:
         <plugin>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-maven-plugin</artifactId>
-            <version>2.2.21</version>
+            <version>2.3.0</version>
             <executions>
                 <execution>
                     <id>compile</id>
@@ -115,15 +115,15 @@ Define the kotlin-maven-plugin in your pom.xml:
             </executions>
             <configuration>
                 <jvmTarget>17</jvmTarget>
-                <apiVersion>2.2.21</apiVersion>
-                <languageVersion>2.2.21</languageVersion>
+                <apiVersion>2.3.0</apiVersion>
+                <languageVersion>2.3.0</languageVersion>
                 <processorOptions></processorOptions>
             </configuration>
             <dependencies>
                 <dependency>
                     <artifactId>pf4j-kotlin-symbol-processing</artifactId>
                     <groupId>care.better.pf4j</groupId>
-                    <version>2.2.21-1.0.3</version>
+                    <version>2.3.0-1.0.4</version>
                 </dependency>
             </dependencies>
         </plugin>
@@ -147,11 +147,11 @@ Apply the com.google.devtools.ksp plugin with the specified version and pf4j-kot
 
 ```kotlin
 plugins {
-    id("com.google.devtools.ksp") version "2.2.21-2.0.4"
+    id("com.google.devtools.ksp") version "2.3.4"
 }
 
 dependencies {
     implementation("org.pf4j:pf4j:3.13.0")
-    ksp("care.better.pf4j:pf4j-kotlin-symbol-processing:2.2.21-1.0.3")
+    ksp("care.better.pf4j:pf4j-kotlin-symbol-processing:2.3.0-1.0.4")
 }
 ```
