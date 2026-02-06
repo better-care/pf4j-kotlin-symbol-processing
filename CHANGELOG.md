@@ -2,9 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.3.10-1.0.4 - 2026-02-06
+
+- Upgrade Kotlin to 2.3.10
+- Upgrade KSP to 2.3.5
+
 ## 2.3.0-1.0.4 - 2025-12-16
 
 - Upgrade Kotlin to 2.3.0
+- Upgrade KSP to 2.3.4
 
 ## 2.2.21-1.0.3 - 2025-11-27
 
