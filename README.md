@@ -18,7 +18,7 @@ Define the PF4J dependency in your pom.xml:
 <dependency>
     <groupId>org.pf4j</groupId>
     <artifactId>pf4j</artifactId>
-    <version>3.13.0</version>
+    <version>3.15.0</version>
 </dependency>
 
 ```
@@ -78,7 +78,7 @@ Define the kotlin-maven-plugin in your pom.xml:
         <plugin>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-maven-plugin</artifactId>
-            <version>2.3.10</version>
+            <version>2.3.20</version>
             <executions>
                 <execution>
                     <id>compile</id>
@@ -105,7 +105,7 @@ Define the kotlin-maven-plugin in your pom.xml:
         <plugin>
             <groupId>io.mcarle</groupId>
             <artifactId>ksp-maven-plugin</artifactId>
-            <version>2.3.0-1</version>
+            <version>2.3.5-1</version>
             <executions>
                 <execution>
                     <goals>
@@ -115,15 +115,15 @@ Define the kotlin-maven-plugin in your pom.xml:
             </executions>
             <configuration>
                 <jvmTarget>17</jvmTarget>
-                <apiVersion>2.3.10</apiVersion>
-                <languageVersion>2.3.10</languageVersion>
+                <apiVersion>2.3.20</apiVersion>
+                <languageVersion>2.3.20</languageVersion>
                 <processorOptions></processorOptions>
             </configuration>
             <dependencies>
                 <dependency>
                     <artifactId>pf4j-kotlin-symbol-processing</artifactId>
                     <groupId>care.better.pf4j</groupId>
-                    <version>2.3.10-1.0.4</version>
+                    <version>2.3.20-1.0.4</version>
                 </dependency>
             </dependencies>
         </plugin>
@@ -147,11 +147,11 @@ Apply the com.google.devtools.ksp plugin with the specified version and pf4j-kot
 
 ```kotlin
 plugins {
-    id("com.google.devtools.ksp") version "2.3.5"
+    id("com.google.devtools.ksp") version "2.3.6"
 }
 
 dependencies {
-    implementation("org.pf4j:pf4j:3.13.0")
-    ksp("care.better.pf4j:pf4j-kotlin-symbol-processing:2.3.10-1.0.4")
+    implementation("org.pf4j:pf4j:3.15.0")
+    ksp("care.better.pf4j:pf4j-kotlin-symbol-processing:2.3.20-1.0.4")
 }
 ```

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.3.20-1.0.4 - 2026-03-17
+
+- Upgrade Kotlin to 2.3.20
+- Upgrade KSP to 2.3.6
+- Upgrade PF4J to 3.15.0
+- Upgrade compiler Java source version to 25
+
 ## 2.3.10-1.0.4 - 2026-02-06
 
 - Upgrade Kotlin to 2.3.10
