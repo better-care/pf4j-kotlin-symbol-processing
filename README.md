@@ -7,7 +7,7 @@ Library that is using Kotlin Symbol Processing (KSP) for processing Extension an
 
 ## Release
 
-[![Release Artifacts](https://maven-badges.herokuapp.com/sonatype-central/care.better.pf4j/pf4j-kotlin-symbol-processing/badge.svg)](https://central.sonatype.com/artifact/care.better.pf4j/pf4j-kotlin-symbol-processing)
+[![Release Artifacts](https://img.shields.io/maven-central/v/care.better.pf4j/pf4j-kotlin-symbol-processing)](https://central.sonatype.com/artifact/care.better.pf4j/pf4j-kotlin-symbol-processing)
 
 ### Usage with Maven
 
