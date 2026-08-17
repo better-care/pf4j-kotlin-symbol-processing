@@ -35,8 +35,8 @@
         <maven.compiler.target>17</maven.compiler.target>
 
         <pf4j.version>3.15.0</pf4j.version>
-        <kotlin.version>2.4.0</kotlin.version>
-        <symbol-processing-api.version>2.3.6</symbol-processing-api.version>
+        <kotlin.version>2.4.10</kotlin.version>
+        <symbol-processing-api.version>2.3.11</symbol-processing-api.version>
 
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
