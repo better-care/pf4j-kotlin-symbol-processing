@@ -58,9 +58,38 @@ class ExtensionSymbolProcessor(private val environment: SymbolProcessorEnvironme
         environment.options[USE_JSP]?.toBoolean() ?: System.getProperty("pf4j.useJavaServiceProviders", "false").toBoolean()
 
     /**
+     * Accumulates the discovered extension class names across all processing rounds.
+     * The generated files are written once in [finish] so that the aggregating
+     * [EXTENSION_FILE_PATH] resource is not created more than once (which would fail
+     * with a [kotlin.io.FileAlreadyExistsException] when KSP runs multiple rounds).
+     */
+    private val extensionClassNames: MutableSet<String> = LinkedHashSet()
+
+    /**
      * Finalize the processing of a [Extension] annotation processing.
      */
     override fun finish() {
+        if (extensionClassNames.isNotEmpty()) {
+            if (useJavaServiceProviders) {
+                extensionClassNames.forEach { className ->
+                    val file = environment.codeGenerator.createNewFileByPath(
+                            Dependencies(false),
+                            className,
+                            BLANK_STRING)
+
+                    file.write(
+                            "$GENERATED_BY_PF4J$NEW_LINE${className}".toByteArray())
+                }
+            } else {
+                val file = environment.codeGenerator.createNewFileByPath(
+                        Dependencies(false),
+                        EXTENSION_FILE_PATH,
+                        EXTENSION_FILE_EXTENSION)
+
+                file.write(
+                        "$GENERATED_BY_PF4J$NEW_LINE${extensionClassNames.joinToString(NEW_LINE)}".toByteArray())
+            }
+        }
         environment.logger.info("Processing of org.pf4j.Extension annotations finished successfully.")
     }
 
@@ -84,27 +113,8 @@ class ExtensionSymbolProcessor(private val environment: SymbolProcessorEnvironme
             return emptyList()
         }
 
-        if (useJavaServiceProviders) {
-            classDeclarations.map { classDeclaration -> classDeclaration.toClassName() }.distinct().forEach { className ->
-                val file = environment.codeGenerator.createNewFileByPath(
-                        Dependencies(false),
-                        className,
-                        BLANK_STRING)
+        classDeclarations.map { classDeclaration -> classDeclaration.toClassName() }.forEach { className -> extensionClassNames.add(className) }
 
-                file.write(
-                        "$GENERATED_BY_PF4J$NEW_LINE${className}".toByteArray())
-            }
-        } else {
-            val file = environment.codeGenerator.createNewFileByPath(
-                    Dependencies(false),
-                    EXTENSION_FILE_PATH,
-                    EXTENSION_FILE_EXTENSION)
-
-            file.write(
-                    "$GENERATED_BY_PF4J$NEW_LINE${
-                        classDeclarations.map { classDeclaration -> classDeclaration.toClassName() }.distinct().joinToString(NEW_LINE)
-                    }".toByteArray())
-        }
         return (classDeclarations).filterNot { it.validate() }.toList()
     }
 

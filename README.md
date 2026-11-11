@@ -73,6 +73,15 @@ Define the kotlin-maven-plugin in your pom.xml:
 ```
 
 ```xml
+<dependencies>
+    <dependency>
+        <groupId>org.pf4j</groupId>
+        <artifactId>pf4j</artifactId>
+        <version>3.15.0</version>
+        <scope>compile</scope>
+    </dependency>
+</dependencies>
+
 <build> <!-- For Kotlin 2.0 or higher -->
     <plugins>
         <plugin>
@@ -97,9 +106,6 @@ Define the kotlin-maven-plugin in your pom.xml:
             </executions>
             <configuration>
                 <jvmTarget>17</jvmTarget>
-                <compilerPlugins>
-                    <compilerPlugin>ksp</compilerPlugin>
-                </compilerPlugins>
             </configuration>
         </plugin>
         <plugin>
