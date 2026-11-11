@@ -97,9 +97,6 @@ Define the kotlin-maven-plugin in your pom.xml:
             </executions>
             <configuration>
                 <jvmTarget>17</jvmTarget>
-                <compilerPlugins>
-                    <compilerPlugin>ksp</compilerPlugin>
-                </compilerPlugins>
             </configuration>
         </plugin>
         <plugin>
