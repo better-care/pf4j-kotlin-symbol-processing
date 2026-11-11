@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.4.21-1.0.5.1 - 2026-11-11
+
+- Fix `FileAlreadyExistsException` when KSP runs multiple processing rounds 
+
 ## 2.4.21-1.0.5 - 2026-11-11
 
 - Upgrade Kotlin to 2.4.21
